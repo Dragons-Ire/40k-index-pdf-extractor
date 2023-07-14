@@ -4,13 +4,13 @@ from pypdf import PdfReader, PdfWriter
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(prog='40k_index_pdf_extractor',
+    parser = argparse.ArgumentParser(prog='py40kie',
                                      formatter_class=argparse.RawDescriptionHelpFormatter,
                                      description='Example usages:\n'
-                                                 'python %(prog)s.py "tyranids index.pdf" 9 21 25 27 -o "my army list"'
-                                                 '\npython %(prog)s.py "tyranids index.pdf" "hive tyrant" '
-                                                 '"tyranid warriors with ranged bio-weapons" 25 "hormagaunts" '
-                                                 '-o ".\my lists\my army list"')
+                                                 '%(prog)s "tyranids index.pdf" 9 21 25 27 -o "my army list"'
+                                                 '\n%(prog)s "tyranids index.pdf" "hive tyrant" '
+                                                 '"tyranid warriors with ranged bio-weapons" 25 "hOrMaGaUnTs" '
+                                                 '-o "./my lists/my army list"')
     # Positional arguments
     parser.add_argument('index_pdf', type=str,
                         help='index pdf file to extract cards from')
@@ -80,10 +80,13 @@ def main(index_pdf, pages, output_file_name="my army list", army_rules_pages=[1,
     with output_path.open("wb") as f:
         writer.write(f)
 
-if __name__ == "__main__":
+def console_entry():
     args = parse_args()
     main(index_pdf=args.index_pdf,
          pages=args.pages,
          output_file_name=args.output_pdf,
          army_rules_pages=args.army_rules_pages,
          override_pages=args.overwrite_pages)
+
+if __name__ == "__main__":
+    console_entry()

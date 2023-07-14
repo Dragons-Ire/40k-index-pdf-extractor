@@ -13,7 +13,7 @@ Command line Python program to extract army rules and unit cards from 10th editi
   ```
   pip install py40kie
   ```
-- Run 40k_index_pdf_extractor.py using command line
+- Run py40kie using command line
     - First argument: The index.pdf file to extract cards from  
     - Second argument: Space separated list of cards to extract. Can be page numbers or **exact** unit titles. Army rules, strategems and wargear are included automatically  
     - -o: The file to save the extracted pdf to. Folder path can be included  
@@ -21,5 +21,13 @@ Command line Python program to extract army rules and unit cards from 10th editi
     - -v: Optional flag to override page extraction. Will extract only the page numbers specified  
 
 ## Example usages
-python py40kie.py "tyranids index.pdf" 9 21 25 27 -o "my army list"  
-python py40kie.py "tyranids index.pdf" "hive tyrant" "tyranid warriors with ranged bio-weapons" 25 "hormagaunts" -o ".\my lists\my army list"
+py40kie "tyranids index.pdf" 9 21 25 27 -o "my army list"  
+py40kie "tyranids index.pdf" "hive tyrant" "tyranid warriors with ranged bio-weapons" 25 "hOrMaGaUnTs" -o "./my lists/my army list"
+
+
+# Contributions
+## Future features
+Any suggested features would be appreciated.
+
+## Issues
+py40kie was not tested on all indexes. If there is any problem extracting cards please submit an issue https://github.com/Dragons-Ire/40k-index-pdf-extractor/issues/new
