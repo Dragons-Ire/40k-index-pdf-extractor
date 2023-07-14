@@ -4,13 +4,16 @@ build-backend = "hatchling.build"
 
 [project]
 name = "py40kie"
-version = "0.0.3"
+version = "0.0.4"
 authors = [
   { name="Chris Austin", email="dragons.ire.oce@gmail.com" },
 ]
 description = "Command line Python program to extract army rules and unit cards from 10th edition Warhammer 40k indexes to create army list specific pdfs with reduced file size."
 readme = "README.md"
 requires-python = ">=3.7"
+dependencies = [
+'pypdf ~= 3.12.1',
+]
 classifiers = [
     "Environment :: Console",
     "Programming Language :: Python :: 3",
@@ -22,6 +25,9 @@ classifiers = [
     "Intended Audience :: End Users/Desktop",
     "Operating System :: OS Independent",
 ]
+
+[project.scripts]
+py40kie="src.py40kie:console_entry"
 
 [project.urls]
 "Homepage" = "https://github.com/Dragons-Ire/40k-index-pdf-extractor"
