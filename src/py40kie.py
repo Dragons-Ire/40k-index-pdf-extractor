@@ -32,7 +32,7 @@ def parse_args():
                         help='flag to override functionality - only page numbers specified will be extracted')
     return parser.parse_args()
 
-def main(index_pdf, pages, output_file_name="my army list", army_rules_pages=[1, 2, 3, 4], overwrite_pages=False):
+def main(index_pdf, pages, output_file_name="my army list", army_rules_pages=[1, 2, 3, 4], override_pages=False):
     reader = PdfReader(index_pdf)
     reader_pages = []
     if overwrite_pages:
@@ -86,7 +86,7 @@ def console_entry():
          pages=args.pages,
          output_file_name=args.output_pdf,
          army_rules_pages=args.army_rules_pages,
-         override_pages=args.overwrite_pages)
+         override_pages=args.override_pages)
 
 if __name__ == "__main__":
     console_entry()
