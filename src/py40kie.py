@@ -35,7 +35,7 @@ def parse_args():
 def main(index_pdf, pages, output_file_name="my army list", army_rules_pages=[1, 2, 3, 4], override_pages=False):
     reader = PdfReader(index_pdf)
     reader_pages = []
-    if overwrite_pages:
+    if override_pages:
         # only extract the specified page numbers
         for page in pages:
             if page.isdigit():
