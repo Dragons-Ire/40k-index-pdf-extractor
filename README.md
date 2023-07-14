@@ -17,7 +17,7 @@ You can install pypdf using pip:
 - Run 40k_index_pdf_extractor.py using command line
     - First argument: The index.pdf file to extract cards from  
     - Second argument: Space separated list of cards to extract. Can be page numbers or **exact** unit titles. Army rules, strategems and wargear are included automatically  
-    - -o: The file to save the extracted pdf to. Folder path can be included if the folder already exists  
+    - -o: The file to save the extracted pdf to. Folder path can be included  
     - -a: Optional argument to specify army rules and strategem pages (space separated numbers). Use this if the army rules and strategems are not contained in the first 4 pages of the index  
     - -v: Optional flag to override page extraction. Will extract only the page numbers specified  
 
