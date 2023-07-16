@@ -16,7 +16,9 @@ Command line Python program to extract army rules and unit cards from 10th editi
     - The "index.pdf" file to extract cards from  
     - Space separated list of cards to extract. Can be page numbers or **exact** unit titles. Army rules, strategems and unit wargear are included automatically  
     ###### Optional arguments:  
-    - -o: The file to save the extracted pdf to. Folder path can be included  
+    - -o: The file to save the extracted pdf to. Folder path can be included
+    - -e: Optional flag to extract the enhancements page
+    - -nw: Optional flag to disable extracting wargear pages
     - -a: Optional argument to specify army rules and strategem pages (space separated numbers). Use this if the army rules and strategems are not contained in the first 4 pages of the index  
     - -v: Optional flag to override page extraction. Will extract only the page numbers specified  
   ### Examples  
