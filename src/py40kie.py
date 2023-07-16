@@ -24,6 +24,12 @@ def parse_args():
                         help='file to save the extracted cards to - '
                              'can be in a folder (default: "%(default)s")')
 
+    parser.add_argument('-e', dest='enhancements', action='store_true',
+                        help='flag to extract enhancements')
+
+    parser.add_argument('-nw', dest='wargear', action='store_false',
+                        help='flag to not extract wargear')
+
     parser.add_argument('-a', '--army_rules_pages', default=[1, 2, 3, 4], type=int, nargs='+',
                         help='override army rule pages - use if the army rules are not on pages 1,2,3,4 '
                              '(default: 1 2 3 4)')
@@ -32,7 +38,7 @@ def parse_args():
                         help='flag to override functionality - only page numbers specified will be extracted')
     return parser.parse_args()
 
-def main(index_pdf, pages, output_file_name="my army list", army_rules_pages=[1, 2, 3, 4], override_pages=False):
+def main(index_pdf, pages, output_file_name="my army list", army_rules_pages=[1, 2, 3, 4], enhancements=False, wargear=True, override_pages=False):
     reader = PdfReader(index_pdf)
     reader_pages = []
     if override_pages:
@@ -45,14 +51,18 @@ def main(index_pdf, pages, output_file_name="my army list", army_rules_pages=[1,
         for page in army_rules_pages:
             if not int(page) - 1 in reader_pages:
                 reader_pages.append(int(page) - 1)
+        if enhancements:
+            if not 4 in reader_pages:
+                reader_pages.append(4)
 
         for page in pages:
             if page.isdigit():
                 # extract the specified page numbers and following page (their wargear)
                 if not int(page) - 1 in reader_pages:
                     reader_pages.append(int(page) - 1)
-                if not int(page) in reader_pages:
-                    reader_pages.append(int(page))
+                if wargear:
+                    if not int(page) in reader_pages:
+                        reader_pages.append(int(page))
             else:
                 # extract the specified pages by unit title (must be exact match)
                 # not tested thoroughly so may miss some things
@@ -64,8 +74,9 @@ def main(index_pdf, pages, output_file_name="my army list", army_rules_pages=[1,
                     if text.split('\n')[0].lower() == page.lower():
                         if not i in reader_pages:
                             reader_pages.append(i)
-                        if not i + 1 in reader_pages:
-                            reader_pages.append(i + 1)
+                        if wargear:
+                            if not i + 1 in reader_pages:
+                                reader_pages.append(i + 1)
                         break
 
     writer = PdfWriter()
@@ -86,6 +97,8 @@ def console_entry():
          pages=args.pages,
          output_file_name=args.output_pdf,
          army_rules_pages=args.army_rules_pages,
+         enhancements=args.enhancements,
+         wargear=args.wargear,
          override_pages=args.override_pages)
 
 if __name__ == "__main__":
