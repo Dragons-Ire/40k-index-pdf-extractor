@@ -10,7 +10,7 @@ Command line Python program to extract army rules and unit cards from 10th editi
   ```
 - Run py40kie using command line:  
   ```
-  py40kie [-h] [-o OUTPUT_PDF] [-a ARMY_RULES_PAGES [ARMY_RULES_PAGES ...]] [-v] index_pdf pages [pages ...]
+  py40kie [-h] [-o OUTPUT_PDF] [-e] [-nw] [-a ARMY_RULES_PAGES [ARMY_RULES_PAGES ...]] [-v] index_pdf pages [pages ...]
   ```
   ###### Postional arguments
     - The "index.pdf" file to extract cards from  
