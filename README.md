@@ -46,7 +46,8 @@ Command line Python program to extract army rules and unit cards from 10th editi
 Any suggested features would be appreciated  
  - [x] Allied units from other Indexes/Imperial Armour/Legends  
  - [x] Extract Adeptus Astartes army rule page for Space Marine lists  
- - [x] Convert Google Sheet army builder lists to runnable command https://www.reddit.com/r/WarhammerCompetitive/comments/14br6rw/10e_40k_list_builder_spreadsheets/  
+ - [x] Create runnable command from [Google Sheet army builder lists](https://www.reddit.com/r/WarhammerCompetitive/comments/14br6rw/10e_40k_list_builder_spreadsheets/)  
+       Copy the cells in the yellow box from here to your own sheet: https://docs.google.com/spreadsheets/d/1A1lDqmL0f_iH9OIUQWL_v83_leyhm3t0rhyC20UfrPA  
  - [ ] Extract extra rule pages. e.g. Deathwatch Armoury  
  - [ ] Handle exceptions gracefully  
  - [ ] Webapp version?...  
