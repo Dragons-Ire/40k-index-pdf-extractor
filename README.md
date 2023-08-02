@@ -14,7 +14,10 @@ Command line Python program to extract army rules and unit cards from 10th editi
                [-ns] [-ne] [-nw] [-r RULE_PAGES [RULE_PAGES ...]] [-v]
                index_pdf pages [pages ...]
   ```
-  ### Examples  
+## Army List builder instructions
+- Create army list with [Google Sheet army list builder](https://drive.google.com/drive/folders/1_d0pSPt2FGUSlCSWsAF0c2JmgkWIa4DW)  
+- Run the generated py40kie command  
+## Examples  
   ```
   py40kie "Tyranids Index.pdf" 9 21 25 27 -o "my army list"  
   ```
@@ -23,6 +26,9 @@ Command line Python program to extract army rules and unit cards from 10th editi
   ```
   ```
   py40kie "Space Wolves Index.pdf" 7 1-23 "Blood Claws" 1-53 "terminator squad" "2-culexus assassin" 2-7 3-1 -o "Best Army List Ever.pdf" -i "Space Marines Index.pdf" "Agents of Imperium Index.pdf" "Imperial Armour Astartes.pdf"
+  ```
+  ```
+  py40kie "Blood Angels Index.pdf" "Commander Dante" "Sanguinary Guard" "Lieutenant in Phobos Armour" "Death Company Marines" "Astraeus" "Culexus Assassin" "Knight Gallant" -o "super competitive list.pdf"  -i "Astartes Index.pdf" "Imperial Armour Astartes.pdf" "Agents of the Imperium Index.pdf" "Imperial Knights Index.pdf"
   ```
   
   # Arguments
@@ -46,8 +52,9 @@ Command line Python program to extract army rules and unit cards from 10th editi
 Any suggested features would be appreciated  
  - [x] Allied units from other Indexes/Imperial Armour/Legends  
  - [x] Extract Adeptus Astartes army rule page for Space Marine lists  
- - [x] Create runnable command from [Google Sheet army builder lists](https://www.reddit.com/r/WarhammerCompetitive/comments/14br6rw/10e_40k_list_builder_spreadsheets/)  
-       Copy the cells in the yellow box from here to your own sheet: https://docs.google.com/spreadsheets/d/1A1lDqmL0f_iH9OIUQWL_v83_leyhm3t0rhyC20UfrPA  
+ - [x] Create runnable command from [Google Sheet army builder lists](https://drive.google.com/drive/folders/1_d0pSPt2FGUSlCSWsAF0c2JmgkWIa4DW)  
+       [Example Sheet](https://docs.google.com/spreadsheets/d/1A1lDqmL0f_iH9OIUQWL_v83_leyhm3t0rhyC20UfrPA)  
+       Original creator [u/Swelt](https://www.reddit.com/r/WarhammerCompetitive/comments/14br6rw/10e_40k_list_builder_spreadsheets)  
  - [ ] Extract extra rule pages. e.g. Deathwatch Armoury  
  - [ ] Handle exceptions gracefully  
  - [ ] Webapp version?...  
